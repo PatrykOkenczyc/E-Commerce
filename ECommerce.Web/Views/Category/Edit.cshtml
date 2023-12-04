@@ -1,0 +1,23 @@
+﻿@model ECommerce.Entities.Category
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form method="post">
+    <input type="hidden" name="ID" value="@Model.ID" />
+
+    <label>Name</label>
+    <input name="Name" value="@Model.Name" />
+
+    <br />
+
+    <label>Description</label>
+    <input name="Description" value="@Model.Description" />
+
+    <br />
+
+    <button> Save</button>
+</form>
+

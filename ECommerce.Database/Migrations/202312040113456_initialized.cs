@@ -11,7 +11,7 @@
                 "dbo.Categories",
                 c => new
                     {
-                        ID = c.Guid(nullable: false),
+                        ID = c.Int(nullable: false, identity: false),
                         Name = c.String(),
                         Description = c.String(),
                     })
@@ -21,11 +21,11 @@
                 "dbo.Products",
                 c => new
                     {
-                        ID = c.Guid(nullable: false),
+                        ID = c.Int(nullable: false, identity: true),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Name = c.String(),
                         Description = c.String(),
-                        Category_ID = c.Guid(),
+                        Category_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Categories", t => t.Category_ID)

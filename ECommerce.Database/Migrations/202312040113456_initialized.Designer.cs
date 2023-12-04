@@ -13,7 +13,7 @@ namespace ECommerce.Database.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202312030031596_initialized"; }
+            get { return "202312040113456_initialized"; }
         }
         
         string IMigrationMetadata.Source

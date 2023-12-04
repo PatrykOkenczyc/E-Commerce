@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F76C549-867F-477D-AE3C-87546ABF11AC}</ProjectGuid>
+    <ProjectGuid>{241D4BE5-0AF1-472B-83C8-62A27FA2F267}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ECommerce.Database</RootNamespace>
-    <AssemblyName>ECommerce.Database</AssemblyName>
+    <RootNamespace>ECommerce.Services</RootNamespace>
+    <AssemblyName>ECommerce.Services</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,28 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CBContext.cs" />
-    <Compile Include="Migrations\202312040113456_initialized.cs" />
-    <Compile Include="Migrations\202312040113456_initialized.designer.cs">
-      <DependentUpon>202312040113456_initialized.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="CategoriesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Database\ECommerce.Database.csproj">
+      <Project>{7F76C549-867F-477D-AE3C-87546ABF11AC}</Project>
+      <Name>ECommerce.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ECommerce.Entities\ECommerce.Entities.csproj">
-      <Project>{69e32c7b-d678-4b76-ae90-f85aef149368}</Project>
+      <Project>{69E32C7B-D678-4B76-AE90-F85AEF149368}</Project>
       <Name>ECommerce.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312040113456_initialized.resx">
-      <DependentUpon>202312040113456_initialized.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
