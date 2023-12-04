@@ -52,17 +52,17 @@ namespace ECommerce.Web.Controllers
         }
         
         [HttpGet]
-        public ActionResult Delete(int ID)
+        public ActionResult Delete()
         {
-            var category = categoryService.GetCategory(ID);
+            var categories = categoryService.GetCategories();
 
-            return View(category);
+            return View(categories);
         }
 
         [HttpPost]
-        public ActionResult Delete(Category category)
+        public ActionResult Delete(int ID)
         {    
-            categoryService.DeleteCategory(category.ID);
+            categoryService.DeleteCategory(ID);
 
             return RedirectToAction("Index");
         }
